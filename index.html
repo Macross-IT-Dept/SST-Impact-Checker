@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>SST Checker</title>
+</head>
+
+<body style="background-color: #e79aff; background-image: linear-gradient(#691883, #fbeeff);"> 
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card" style="width: 35rem; margin-top: 2em; margin-bottom: 2em;"> 
+            <div class="card-header text-center">
+                <img src="Macross Logo-B.png" alt="Company Logo" style=" margin-top: 2em; max-width: 180px;">
+                <h2 style="margin-top:1em;">Malaysia SST Impact Checker</h2>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="revenueInput" class="form-label">Revenue (RM) - <b>From the past 12 months</b></label>
+                    <input type="number" class="form-control" id="revenueInput" placeholder="e.g., 600000" min="0">
+                </div>
+                <div class="mb-3" id="studentFeeContainer" style="display: none;">
+                    <label for="studentFeeInput" class="form-label">Student's Annual Fee (RM)</label>
+                    <input type="number" class="form-control" id="studentFeeInput" placeholder="e.g., 65000" min="0">
+                </div>
+                <div class="mb-3">
+                    <label for="serviceCategory" class="form-label">Taxable Service Category</label>
+                    <select class="form-select" id="serviceCategory">
+                        <option value="">-- Select a category --</option>
+                        </select>
+                </div>
+
+                <div class="mb-3" id="subCategoryContainer">
+                    <label for="subServiceCategory" class="form-label">Sub-Category</label>
+                    <select class="form-select" id="subServiceCategory">
+                        <option value="">-- Select a sub-category -- </option>
+                    </select>
+                </div>
+
+                <div id="categoryDetails" class="alert alert-info mt-3" style="display: none;">
+                    <strong>Selected Service Details:</strong>
+                    <p id="selectedServiceName" class="mb-1"></p>
+                    <p id="categoryDescription" class="mb-1"></p>
+                    <p class="mb-1">SST Rate: <span id="categoryRate"></span></p>
+                    <p class="mb-1">Threshold: <span id="categoryThreshold"></span></p>
+                </div>
+
+                <div id="educationCondition" class="form-check mb-3" style="display: none;">
+                    <input class="form-check-input" type="checkbox" value="" id="feeOver60kCheck">
+                    <label class="form-check-label" for="feeOver60kCheck">
+                        My institution has at least one student whose annual fee exceeds RM60,000.
+                    </label>
+                </div>
+
+                <button id="calculateSST" class="btn btn-primary w-100 mb-3">Check SST Impact</button>
+
+                <div id="resultDisplay" class="p-3 border rounded" style="display: none;">
+                    <h5 id="sstStatus" class="text-center"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+</html>
+
