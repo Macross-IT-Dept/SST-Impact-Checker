@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Special threshold text for private education
         if (serviceCategorySelect.value === "private_education") {
-            categoryThresholdSpan.textContent = "Over RM 60,000 of annual fee per student/year";
+            categoryThresholdSpan.textContent = "Over RM 60,000 of fees per student/year";
         } else {
             categoryThresholdSpan.textContent = `RM ${data.threshold.toLocaleString()}`;
         }
